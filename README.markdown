@@ -33,23 +33,23 @@ A Quick Test Run
 ------------
 Throw this into a controller and give it a run.  Make sure that the sendmail path is correct.
 
-$this->load->spark('swift-mailer/0.0.1');
+    $this->load->spark('swift-mailer/0.0.1');
 
-// create the transport
-$transport = Swift_SendmailTransport::newInstance('/usr/sbin/sendmail -bs');
+    // create the transport
+    $transport = Swift_SendmailTransport::newInstance('/usr/sbin/sendmail -bs');
 
-// create the mailer that will use the transport
-$mailer = Swift_Mailer::newInstance($transport);
+    // create the mailer that will use the transport
+    $mailer = Swift_Mailer::newInstance($transport);
 
-// create the message
-$message = Swift_Message::newInstance();
-$message->setSubject('test');
-$message->setFrom('noreply@test.com');
-$message->setTo(array('youremail@testdomain.com' => 'Your Name'));
-$message->setBody('This is the body.');
+    // create the message
+    $message = Swift_Message::newInstance();
+    $message->setSubject('test');
+    $message->setFrom('noreply@test.com');
+    $message->setTo(array('youremail@testdomain.com' => 'Your Name'));
+    $message->setBody('This is the body.');
 
-// send the message
-$mailer->send($message);
+    // send the message
+    $mailer->send($message);
 
 
 Contact and Credit
