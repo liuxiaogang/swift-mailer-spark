@@ -51,6 +51,14 @@ Throw this into a controller and give it a run.  Make sure that the sendmail pat
     // send the message
     $mailer->send($message);
 
+If you prefer to use abstraction mode then configure the spark by editing sparks/swift-mailer/<version>/config/swift-mailer.php
+then use:
+
+    $this->load->spark('swift-mailer/0.0.1');
+
+    $this->swiftmailer->create_message('test_message', 'Test message subject.', 'message body', 'from@email.com', 'to@email.com');
+    $result = $this->swiftmailer->send_message('test_message');
+
 
 Contact and Credit
 -----------------
