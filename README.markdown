@@ -1,4 +1,4 @@
-Swift Mailer Spark
+Swift Mailer Spark v0.1.1
 ====================
 
 [Swift Mailer](http://swiftmailer.org/) is an open source PHP Mailer library.
