@@ -122,7 +122,7 @@ class SwiftMailer
         }
     }
 
-    public function create_message($message_identifier = FALSE, $message_subject = FALSE, $message_body = FALSE, $message_from = FALSE, $message_to = FALSE)
+    public function create_message($message_identifier = FALSE, $message_subject = FALSE, $message_body = FALSE, $message_from = FALSE, $message_to = FALSE, $content_type = 'text/html')
     {
         if(!$this->initialized) return false;
         if(!$message_identifier) $message_identifier = 'default';
@@ -144,6 +144,11 @@ class SwiftMailer
         if($message_to)
         {
             $this->messages[$message_identifier]->setTo($message_to);
+        }
+
+        if($content_type)
+        {
+            $this->messages[$message_identifier]->setContentType($content_type);
         }
 
         return TRUE;

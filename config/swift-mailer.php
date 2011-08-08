@@ -35,9 +35,6 @@ It’s a last resort, and we say that with a passion!
 */
 $config['swift_mailer_transport_type'] = FALSE;
 
-
-
-
 // SMTP configuration - this is completely ignored unless the
 // transport type is set to smtp.
 
