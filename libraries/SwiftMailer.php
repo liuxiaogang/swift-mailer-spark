@@ -48,7 +48,11 @@ class SwiftMailer
         $swift_required_path = $this->spark_path . '../vendor/swift-mailer/swift_required' . EXT;
         if(!file_exists($swift_required_path))
         {
-            $this->CI->log->write_log('error', 'The swift-mailer spark could not find the swift-mailer vendor class.');
+			if (isset($this->CI->log) && $this->CI->log instanceof CI_Log)
+			{
+				// only log when the user has loader the log library
+				$this->CI->log->write_log('error', 'The swift-mailer spark could not find the swift-mailer vendor class.');
+			}
             return FALSE;
         }
 
@@ -68,7 +72,11 @@ class SwiftMailer
         }
 
         // initialization complete
-        $this->CI->log->write_log('info', 'The swift-mailer spark has been initialized.');
+		if (isset($this->CI->log) && $this->CI->log instanceof CI_Log)
+		{
+			// only log when the user has loader the log library
+	        $this->CI->log->write_log('info', 'The swift-mailer spark has been initialized.');
+		}
         $this->initialized = TRUE;
     }
 
