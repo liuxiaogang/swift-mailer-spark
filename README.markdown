@@ -1,4 +1,4 @@
-Swift Mailer Spark v 0.1.8
+Swift Mailer Spark v 0.1.9
 ====================
 
 [Swift Mailer](http://swiftmailer.org/) is an open source PHP Mailer library.
@@ -33,7 +33,7 @@ A Quick Test Run
 ------------
 Throw this into a controller and give it a run.  Make sure that the sendmail path is correct.
 
-    $this->load->spark('swift-mailer/0.1.8');
+    $this->load->spark('swift-mailer/0.1.9');
 
     // create the transport
     $transport = Swift_SendmailTransport::newInstance('/usr/sbin/sendmail -bs');
@@ -54,7 +54,7 @@ Throw this into a controller and give it a run.  Make sure that the sendmail pat
 If you prefer to use abstraction mode then configure the spark by editing sparks/swift-mailer/<version>/config/swift-mailer.php
 then use:
 
-    $this->load->spark('swift-mailer/0.1.8');
+    $this->load->spark('swift-mailer/0.1.9');
 
     $this->swiftmailer->create_message('test_message', 'Test message subject.', 'message body', 'from@email.com', 'to@email.com');
     $result = $this->swiftmailer->send_message('test_message');

@@ -1,5 +1,5 @@
 name: swift-mailer
-version: 0.1.7
+version: 0.1.9
 compatibility: 2.0.1
 
 dependencies: []
